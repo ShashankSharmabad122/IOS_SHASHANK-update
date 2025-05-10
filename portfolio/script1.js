@@ -114,25 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Contact form submission
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Here you would typically send the form data to a server
-            // For now, we'll just show an alert
-            alert(`Thank you, ${name}! Your message has been received. I'll get back to you soon at ${email}.`);
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
+    // Contact form submission is now handled in email.js
 });
 
 // Function to toggle theme

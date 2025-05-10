@@ -10,6 +10,8 @@
     --hover-color: #9575cd;
     --font-main: 'Inter', sans-serif;
     --transition-speed: 0.3s;
+    --success-color: #4caf50;
+    --error-color: #f44336;
 }
 
 :root {
@@ -1211,4 +1213,33 @@ body {
      .testimonial-card {
          min-width: 280px;
      }
+ }
+
+ /* Notification System */
+ .notification {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     padding: 15px 25px;
+     border-radius: 8px;
+     color: white;
+     font-weight: 500;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+     z-index: 1000;
+     transform: translateY(100px);
+     opacity: 0;
+     transition: transform 0.3s ease, opacity 0.3s ease;
+ }
+
+ .notification.show {
+     transform: translateY(0);
+     opacity: 1;
+ }
+
+ .notification.success {
+     background-color: var(--success-color);
+ }
+
+ .notification.error {
+     background-color: var(--error-color);
  }
