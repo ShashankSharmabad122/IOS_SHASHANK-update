@@ -2,7 +2,7 @@
 
 A modern web-based operating system interface that simulates a desktop environment in your browser, complete with multiple applications, file management, and a sleek user interface.
 
-![Shashank OS](https://via.placeholder.com/800x400?text=Shashank+OS)
+![Shashank OS](OSimage1.jpg)
 
 ## Overview
 
