@@ -2659,6 +2659,7 @@ function startFlappyBirdGame() {
         });
     }
 
+
     function updatePipes() {
         if (frame % 90 === 0) {
             let pipeHeight = Math.floor(Math.random() * (canvas.height / 2));

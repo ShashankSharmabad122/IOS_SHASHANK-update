@@ -1,30 +1,20 @@
 <?php
 session_start();
 
-// Database connection
-$host = 'localhost';
-$dbname = 'shashank_os';
-$username = 'root';
-$password = '';
-
-try {
-    $db = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("Database connection failed: " . $e->getMessage());
-}
+// Include database configuration
+require_once 'config.php';
 
 // Function to redirect with error message
 function redirectWithError($message) {
     $_SESSION['error'] = $message;
-    header('Location: login.html');
+    header('Location: login.php');
     exit;
 }
 
 // Function to redirect with success message
 function redirectWithSuccess($message) {
     $_SESSION['success'] = $message;
-    header('Location: login.html');
+    header('Location: login.php');
     exit;
 }
 
@@ -65,7 +55,7 @@ if (isset($_POST['login'])) {
         }
         
         // Redirect to main OS
-        header('Location: index.html');
+        header('Location: index.php');
         exit;
     } else {
         redirectWithError('Invalid username or password');
@@ -139,7 +129,7 @@ if (isset($_GET['logout'])) {
     }
     
     // Redirect to login page
-    header('Location: login.html');
+    header('Location: login.php');
     exit;
 }
 
@@ -159,8 +149,8 @@ if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_token'])) {
         
         // Redirect to main OS if on login page
         $current_page = basename($_SERVER['PHP_SELF']);
-        if ($current_page === 'login.html') {
-            header('Location: index.html');
+        if ($current_page === 'login.php') {
+            header('Location: index.php');
             exit;
         }
     }
